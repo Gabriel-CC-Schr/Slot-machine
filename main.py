@@ -117,18 +117,20 @@ def spin(balance):
         total_bet = bet * lines
 
         if total_bet > balance:
-            print(f"You don't have enough money to make that bet. You have ${balance} left.")
+            print(
+                f"You do not have enough to bet that amount, your current balance is: ${balance}")
         else:
             break
 
-    print(f"You are bettinh ${bet} on {lines} lines. Total bet: ${total_bet}")
+    print(
+        f"You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
 
-    slots = get_slot_machine_spin(ROWS, COLS, symbols_count)
-    print_slot_machine_spin(slots)
-    winnings, winnings_lines = check_winnings(slots, lines, bet, symbols_value)
-    print(f"You won ${winnings}!")
-    print(f"You won on line", *winnings_lines)
-    return winnings_lines - total_bet
+    slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
+    print_slot_machine(slots)
+    winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
+    print(f"You won ${winnings}.")
+    print(f"You won on lines:", *winning_lines)
+    return winnings - total_bet
 
 
 def main():
