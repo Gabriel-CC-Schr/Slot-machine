@@ -7,18 +7,18 @@ MIN_BET = 1
 ROWS = 3
 COLS = 3
 
-symbol_count = {
+symbol_counts = {
     "A": 2,
-    "B": 4,
-    "C": 6,
-    "D": 10,
+    "B": 5,
+    "C": 8,
+    "D": 20,
 }
 
-symbol_value = {
+symbols_value = {
     "A": 5,
-    "B": 4,
+    "B": 3,
     "C": 3,
-    "D": 2,
+    "D": 6,
 }
 
 def check_winnings(columns, lines, bet, values):
@@ -38,8 +38,8 @@ def check_winnings(columns, lines, bet, values):
 
 def get_slot_machine_spin(rows, cols, symbols):
     all_symbols = []
-    for symbol, symbol_count in symbols.items():
-        for _ in range(symbol_count):
+    for symbol, symbol_counts in symbols.items():
+        for _ in range(symbol_counts):
             all_symbols.append(symbol)
 
     columns = []
@@ -126,9 +126,9 @@ def spin(balance):
     print(
         f"You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
 
-    slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
+    slots = get_slot_machine_spin(ROWS, COLS, symbol_counts)
     print_slot_machine(slots)
-    winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
+    winnings, winning_lines = check_winnings(slots, lines, bet, symbols_value)
     print(f"You won ${winnings}.")
     print(f"You won on lines:", *winning_lines)
     return winnings - total_bet
