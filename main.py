@@ -61,7 +61,7 @@ def print_slot_machine_spin(columns):
             if i != len(columns) - 1:
                 print(column[row], end=" | ")
             else:
-                print(columns[row], end="")
+                print(column[row], end="")
 
         print()
 
