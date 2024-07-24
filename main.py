@@ -135,15 +135,15 @@ def spin(balance):
 
 
 def main():
-    balance = desposit()
-    while True: 
-        print(f"Your balance is ${balance}")
-        answer  = input("press enter to play or type 'q' to leave the game: ")
+    balance = deposit()
+    while True:
+        print(f"Current balance is ${balance}")
+        answer = input("Press enter to play (q to quit).")
         if answer == "q":
             break
         balance += spin(balance)
 
-    print(f"Your final balance is ${balance}")
-    
+    print(f"You left with ${balance}")
+
 
 main()
