@@ -44,15 +44,15 @@ def get_slot_machine_spin(rows, cols, symbols):
 
     columns = []
     for _ in range(cols):
-        columns = []
+        column = []
         current_symbols = all_symbols[:]
         for _ in range(rows):
             value = random.choice(current_symbols)
             current_symbols.remove(value)
-            columns.append(value)
+            column.append(value)
 
-        columns.append(columns)
-    
+        columns.append(column)
+
     return columns
 
 def print_slot_machine_spin(columns):
