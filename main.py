@@ -1,8 +1,8 @@
 import random
 
 MAX_LINES = 3
-MAX_Bet = 100
-MIN_Bet = 1
+MAX_BET = 100
+MIN_BET = 1
 
 ROWS = 3
 COLS = 3
@@ -97,16 +97,16 @@ def get_number_of_lines():
     return lines
 
 def get_bet():
-    while True: 
-        amount = input("How much would you like to bet on each line? ")
+    while True:
+        amount = input("What would you like to bet on each line? $")
         if amount.isdigit():
             amount = int(amount)
-            if MIN_Bet <= amount <= MAX_Bet:
+            if MIN_BET <= amount <= MAX_BET:
                 break
             else:
-                print(f"A bet must be between ${MIN_Bet} - ${MAX_Bet}.")
+                print(f"Amount must be between ${MIN_BET} - ${MAX_BET}.")
         else:
-            print("Please enter a valid amount")
+            print("Please enter a number.")
 
     return amount
 
